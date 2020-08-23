@@ -122,4 +122,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # django_heroku.settings(locals())
-STATIC_ROOT = '/home/ud23/mysite1/static'
+STATIC_ROOT = '/home/ud23/pml/static'

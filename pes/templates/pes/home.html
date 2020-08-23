@@ -1,0 +1,70 @@
+<head>
+	<title>
+		P.M.L
+	</title>
+
+	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<style>
+body {
+/* background-image: url("https://img.uefa.com/imgml/uefacom/ucl/2018/footer.jpg");*/
+ background-color: #2e3c54; 
+}
+</style>
+</head>
+
+<body>
+	{% include "pes/includes/messages.html" %}
+
+
+	<h1 class="center white-text ">  PES MASTER LEAUGE</h1>
+	<div class ='container'>
+	   
+		{% include "pes/includes/table.html" %}
+	
+		
+	   </div>	
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class ="center">
+	<a href="/add"  class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons"> +</i></a>
+	<p class ="white-text">ADD MATCH</p>
+	</div>
+	
+	
+		<!-- <div class ="col s12 m4 l1"></div> -->
+	<h5 class="white-text">LAST 3 MATCHES</h5>	
+	{% for match in matches %}
+
+			<!-- <div class="row"> -->
+		    <div class="col s12 m1 l3">
+		      <div class="card blue-grey darken-1">
+		        <div class="card-content white-text">
+		          <span class="card-title"> PML SEASON :2</span>
+		          <h4 class ="center"> {{match.player1.name}} VS {{match.player2.name}}</h4>
+		          <h4 class ="center"> {{match.GS_by_1}} - {{match.GS_by_2}}</h4>
+		        </div>
+		        <!-- <div class="card-action">
+		          <a href="#">This is a link</a>
+		          <a href="#">This is a link</a>
+		        </div> -->
+		      </div>
+		    </div>
+	<!-- 	</div> -->
+		  
+	{%  endfor %}	  
+
+	<button class =" black"><a href="/matches" class="white-text">ALL MATCHES</a></button>
+
+
+
+</body>

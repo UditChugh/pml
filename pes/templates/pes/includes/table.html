@@ -1,0 +1,40 @@
+<ul> 
+		{% for p in obj %} 
+		<li>{{ p.name }}    {{ p.total_points}}</li> 
+		{% endfor %} 
+</ul> 
+
+ <table class="highlight centered white-text ">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>MP</th>
+              <th>W</th>
+              <th>L</th>
+              <th>D</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>GD</th>
+              <th>Points</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for player in players %} 
+          <tr>
+            <td>{{ player.name }}</td>
+            <td>{{ player.total_match }}</td>
+            <td>{{ player.total_wins }}</td>
+            <td>{{ player.total_loss }}</td>
+            <td>{{ player.total_draw }}</td>
+            <td>{{ player.total_goal_scored }}</td>
+            <td>{{ player.total_goal_conceded }}</td>
+            <td>{{ player.total_goal_diff }}</td>
+            <td>{{ player.total_points }}</td>
+          </tr>
+        {% endfor %}
+
+
+
+        </tbody>
+  </table>

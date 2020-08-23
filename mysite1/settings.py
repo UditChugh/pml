@@ -27,7 +27,7 @@ SECRET_KEY = '#a1(1j@++eiz84f5^)@!a2d(_t&4^^z0_bo680^ip!oirf==_&'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ud23.pythonanywhere.com']
 
 
 # Application definition
@@ -122,3 +122,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # django_heroku.settings(locals())
+STATIC_ROOT = '/home/ud23/mysite1/static'

@@ -1,0 +1,42 @@
+<head>
+	<title>
+		{{curr_player.name}}
+	</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+ </head>
+
+<style>
+body {
+ /*background-image: url("https://img.uefa.com/imgml/uefacom/ucl/2018/footer.jpg");*/
+ /*background-color: #2e3c54; */
+}
+</style>
+</head>
+{% include "pes/includes/navbar.html" %}
+<div class="album py-5 bg-light">
+    
+<div class="container">
+
+    <div class="row">
+      	{% for player in players %}
+      		<div class="col-md-4">
+	          		<a href="/player/{{ player.id }}"><div class="card mb-4 shadow-sm">
+	          			 <img src="https://image.shutterstock.com/z/stock-photo-stadium-night-226691701.jpg" class="card-img-top" alt="...">
+	          			<!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+			            <a href="/player/{{ player.id }}"><div class="card-body">
+			              <h3 class="card-text">{{ player }}</h3>
+			              
+			            </div>
+			        </a>
+			          </div>
+	        </div>
+	    </a>
+				<!-- 		{{player}}
+				</div>
+			</div>	 -->
+		{%  endfor %}
+
+	</div>
+</div>
+</div>	

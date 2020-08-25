@@ -10,20 +10,25 @@
   
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 <style>
 body {
 /* background-image: url("https://img.uefa.com/imgml/uefacom/ucl/2018/footer.jpg");*/
- background-color: #2e3c54; 
+ /*background-color: #2e3c54; */
 }
 </style>
 </head>
 
 <body>
 	{% include "pes/includes/messages.html" %}
+	{% include "pes/includes/navbar.html" %}
 
-
-	<h1 class="center white-text ">  PES MASTER LEAUGE</h1>
+<br>
+<br>
+	<h1 class="center " style ="color: #5d6263">  PES MASTER LEAUGE</h1>
+<br>
+<br>	
 	<div class ='container'>
 	   
 		{% include "pes/includes/table.html" %}
@@ -36,34 +41,43 @@ body {
 	<br>
 	<br>
 	<div class ="center">
-	<a href="/add"  class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons"> +</i></a>
-	<p class ="white-text">ADD MATCH</p>
+	<!-- <a href="/add"  class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons"> +</i></a>
+	<p >ADD MATCH</p> -->
+	<h5>RECENT MATCHES</h5>
 	</div>
 	
 	
 		<!-- <div class ="col s12 m4 l1"></div> -->
-	<h5 class="white-text">LAST 3 MATCHES</h5>	
-	{% for match in matches %}
+		
 
-			<!-- <div class="row"> -->
-		    <div class="col s12 m1 l3">
-		      <div class="card blue-grey darken-1">
-		        <div class="card-content white-text">
-		          <span class="card-title"> PML SEASON :2</span>
-		          <h4 class ="center"> {{match.player1.name}} VS {{match.player2.name}}</h4>
-		          <h4 class ="center"> {{match.GS_by_1}} - {{match.GS_by_2}}</h4>
-		        </div>
-		        <!-- <div class="card-action">
-		          <a href="#">This is a link</a>
-		          <a href="#">This is a link</a>
-		        </div> -->
-		      </div>
-		    </div>
-	<!-- 	</div> -->
+	<div class="row ">
+		{% for match in matches %}
+
+			
+				<!-- <div class ="col"></div>	 -->
+				<div class ="col-6">	
+				    <div class="card text-white bg-secondary mb-3 text-center">
+				      <div class="card-body">
+				        
+				          <span class="card-title">Match id:{{match.id}} PML SEASON :2 </span>
+				          <h3 class ="center card-text"> {{match.player1.name}} VS {{match.player2.name}}</h3>
+				          <h3 class ="center card-text"> {{match.GS_by_1}} - {{match.GS_by_2}}</h3>
+				       
+				       <!--  <div class="card-action">
+				          <a href="/edit" class="btn btn-primary">Edit Match</a>
+				          
+				        </div> -->
+				      </div>
+				    </div>
+
+				</div>
+				<!-- <div class ="col"></div> -->
+			
 		  
-	{%  endfor %}	  
+	{%  endfor %}
+	</div>	  
 
-	<button class =" black"><a href="/matches" class="white-text">ALL MATCHES</a></button>
+	<!-- <button class =" black"><a href="/matches" class="white-text">ALL MATCHES</a></button> -->
 
 
 

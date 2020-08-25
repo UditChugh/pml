@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db.models import Count
 # Create your models here.
 
 
@@ -17,7 +17,9 @@ class Player(models.Model):
 	total_goal_conceded = models.IntegerField()
 	total_goal_diff = models.IntegerField(default =0)
 
-
+	# def ranking(self):
+	# 	aggregate = Player.objects.filter(total_points__gt=self.total_points).aggregate(ranking=Count('total_points'))
+	# 	return aggregate['ranking'] + 1
 
 
 
@@ -31,6 +33,7 @@ class Match(models.Model):
 
 	GS_by_1 = models.IntegerField()
 	GS_by_2 = models.IntegerField()
+
 
 
 	def __str__ (self):

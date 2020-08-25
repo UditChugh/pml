@@ -7,34 +7,44 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
   
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 
-<style>
+<!-- <style>
 body {
  background-image: url("https://img.uefa.com/imgml/uefacom/ucl/2018/footer.jpg");
  background-color: #2e3c54; 
 }
-</style>
+</style> -->
 </head>
-<a href="/"><h1 class="center white-text hoverable"> P.M.L </h1></a>
-{% for match in all_matches %}
+{% include "pes/includes/navbar.html" %}
+<a href="/"><h1 class="center  hoverable"> P.M.L </h1></a>
+<div class="row ">
+		{% for match in all_matches %}
 
-			<!-- <div class="row"> -->
-		    <div class="col s12 m1 l3">
-		      <div class="card blue-grey darken-1">
-		        <div class="card-content white-text">
-		          <span class="card-title">Match id:{{match.id}} PML SEASON :2 </span>
-		          <h4 class ="center"> {{match.player1.name}} VS {{match.player2.name}}</h4>
-		          <h4 class ="center"> {{match.GS_by_1}} - {{match.GS_by_2}}</h4>
-		        </div>
-		        <div class="card-action">
-		          <a href="/edit" class="btn btn-primary">Edit Match</a>
-		          
-		        </div>
-		      </div>
-		    </div>
-	<!-- 	</div> -->
+			
+				<!-- <div class ="col"></div>	 -->
+				<div class ="col-6">	
+				    <div class="card text-white bg-secondary mb-3 text-center">
+				      <div class="card-body">
+				        
+				          <span class="card-title">Match id:{{match.id}} PML SEASON :2 </span>
+				          <h3 class ="center card-text"> {{match.player1.name}} VS {{match.player2.name}}</h3>
+				          <h3 class ="center card-text"> {{match.GS_by_1}} - {{match.GS_by_2}}</h3>
+				       
+				        <div class="card-action">
+				          <a href="/edit" class="btn btn-primary">Edit Match</a>
+				          
+				        </div>
+				      </div>
+				    </div>
+
+				</div>
+				<!-- <div class ="col"></div> -->
+			
 		  
-{%  endfor %}
+	{%  endfor %}
+	</div>	

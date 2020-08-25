@@ -1,0 +1,125 @@
+<head>
+	<title>
+		{{curr_player.name}}
+	</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+ </head>
+
+<style>
+body {
+ /*background-image: url("https://img.uefa.com/imgml/uefacom/ucl/2018/footer.jpg");*/
+ /*background-color: #2e3c54; */
+}
+</style>
+</head>
+
+<body>
+	{% include "pes/includes/navbar.html" %}
+
+<div class ="row justify-content-md-center">
+		<div class ="col"></div>
+		<div class ="col">
+		<h1 style ="color: #5d6263">{{ curr_player.name }}</h1>
+		</div>
+		<div class ="col"></div>
+</div>
+<br>
+
+<br>	
+<div class="container-fluid">
+	
+	<div class ="row">
+		<div class ="col-4">
+			<div class="card text-white bg-primary mb-3 " >
+			  <div class="card-body">
+			    <h5 class="card-title text-center">Club Stats</h5>
+			    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+			    <ul>
+			    <h5 class="card-text">Matches Played:{{curr_player.total_match}}</h5>
+			    <h5 class="card-text">Points:{{curr_player.total_points}}</h5>
+			    <h5 class="card-text">Position:{{ rank }}</h5>
+			    <h5 class="card-text">Won:{{curr_player.total_wins}}</h5>
+			    <h5 class="card-text">Lost:{{curr_player.total_loss}}</h5>
+			    <h5 class="card-text">Draw:{{curr_player.total_draw}}</h5>
+			    <h5 class="card-text"> Current Form:{{ form_class}}</h5>
+			    <h5 class="card-text">Win %: {{ winp}} %</h5>
+			    <h5 class="card-text">Goals Scored:{{curr_player.total_goal_scored}}</h5>
+			    <h5 class="card-text">Goals Conceded:{{curr_player.total_goal_conceded}}</h5>
+			    </ul>
+			  </div>
+			</div>
+		</div>
+		<div class ="col table-responsive">
+			<table class="table table-dark">
+ 			   <thead>
+    			<tr>
+      				<th scope="col">CLUB</th>
+      				<th scope="col">M</th>
+      				<th scope="col">W</th>
+      				<th scope="col">L</th>
+      				<th scope="col">D</th>
+      				<th scope="col">WIN%</th>
+   				 </tr>
+  			   </thead>
+  			   <tbody>
+  			   		{% for key, value in records.items %}
+					    <tr>
+					   
+					      <td><a href="/player/{{key.id}}" class ="text-white">{{ key }}</a></td>
+					      <td> {{ value.m}}</td>
+					      <td>{{ value.w}} </td>
+					      <td> {{ value.l}} </td>
+					      <td>{{ value.d}} </td>
+					      <td> {{ value.wp }} </td>
+					    </tr>
+				    {%  endfor %}
+			   </tbody>
+
+
+
+  			</table>
+  			<p>Note W is no of matches won by {{ curr_player.name }} against the particular player</p>
+  			<p> WIN% is percantage of matches won by {{ curr_player.name }} against the particular player</p>
+		</div>
+
+	</div>
+	<div class ="row center">
+		<h4>Recent Matches</h4>
+	</div>
+	<!-- <div class ="row"> -->
+	<div class="row ">
+		{% for match in matches %}
+
+			
+				<!-- <div class ="col"></div>	 -->
+				<div class ="col-6">	
+				    <div class="card text-white bg-secondary mb-3 text-center">
+				      <div class="card-body">
+				        
+				          <span class="card-title">Match id:{{match.id}} PML SEASON :2 </span>
+				          <h3 class ="center card-text"> {{match.player1.name}} VS {{match.player2.name}}</h3>
+				          <h3 class ="center card-text"> {{match.GS_by_1}} - {{match.GS_by_2}}</h3>
+				       
+				        <div class="card-action">
+				          <a href="/edit" class="btn btn-primary">Edit Match</a>
+				          
+				        </div>
+				      </div>
+				    </div>
+
+				</div>
+				<!-- <div class ="col"></div> -->
+			
+		  
+	{%  endfor %}
+	</div>	
+	
+
+
+
+
+
+
+</div>	
+</body>

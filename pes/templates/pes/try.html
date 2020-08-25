@@ -1,36 +1,25 @@
-<!-- <div calss ="row">
-	<div class ="col s12 m4 l5 center">
-	<form method="POST" >
-					{% csrf_token %}
-					{{ form.as_ul }}
-					
-					<button class="btn" style="background-color:grey; color:blue" type="submit">ADD MATCH</button>
 
-	</form>
-	</div>
-	<div class ='col'>
-		<a href="http://127.0.0.1:8000/">table</a>
-	</div>
-</div>
- -->
  {% load static %}
  <head>
  	<title>
  		{{ title }}
  	</title>
- 	<style >
+ <!-- 	<style >
  		
 		 body {
 		 background-image: "{% static 'pes/img/bg_img.jpg' %}";
 
 		}
-	</style>	
+	</style> -->	
 	<!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
  </head>
 <body>
-	<img src="{% static 'pes/img/football2.jpg' %}" class="img-fluid w-100 h-auto" alt="Responsive image">
+  {% include "pes/includes/navbar.html" %}
+
+
+	<!-- <img src="{% static 'pes/img/football2.jpg' %}" class="img-fluid w-100 h-auto" alt="Responsive image"> -->
 	{% include "pes/includes/messages.html" %}
 	<div >
 	<div class="card  text-white bg-secondary  mb-3 border-info " style="width: 50%;position:fixed;top: 25%;left: 25%;">

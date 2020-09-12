@@ -34,10 +34,10 @@
         </tbody>
   </table> -->
 
-  <div class ="col table-responsive">
-      <table class="table table-dark">
+  <div class ="col table-responsive bg-white ">
+      <table class="table ">
          <thead>
-          <tr>
+          <tr><th></th>
               <th>Name</th>
               <th>MP</th>
               <th>W</th>
@@ -53,7 +53,8 @@
         <tbody>
         {% for player in players %} 
           <tr>
-            <td><a href="/player/{{ player.id }} " class ="white-text">{{ player.name }}</a></td>
+            <td><img src="{{ player.logo.url }}" class =" responsive-img" width=50 height=40></td>
+            <td><a href="/player/{{ player.id }} " >{{ player.name }}</a></td>
             <td>{{ player.total_match }}</td>
             <td>{{ player.total_wins }}</td>
             <td>{{ player.total_loss }}</td>

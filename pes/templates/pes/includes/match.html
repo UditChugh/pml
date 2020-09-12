@@ -20,6 +20,7 @@ body {
 }
 </style> -->
 </head>
+<body class="bg-light">
 {% include "pes/includes/navbar.html" %}
 <a href="/"><h1 class="center  hoverable"> P.M.L </h1></a>
 <div class="row ">
@@ -28,15 +29,28 @@ body {
 			
 				<!-- <div class ="col"></div>	 -->
 				<div class ="col-6">	
-				    <div class="card text-white bg-secondary mb-3 text-center">
+				    <div class="card  mb-3 text-center">
 				      <div class="card-body">
 				        
 				          <span class="card-title">Match id:{{match.id}} PML SEASON :2 </span>
-				          <h3 class ="center card-text"> {{match.player1.name}} VS {{match.player2.name}}</h3>
-				          <h3 class ="center card-text"> {{match.GS_by_1}} - {{match.GS_by_2}}</h3>
-				       
+				          <div class = "row">
+				          	  <div class ="col">
+				          	      <img src="{{ match.player1.logo.url }}" class =" responsive-img float right" width=90 height=70>
+				          	  </div>
+				          	  <div class ="col">
+					              <h3 class ="center card-text"> {{match.player1.abbr}} VS {{match.player2.abbr}}</h3>
+					              <h3 class ="center card-text"> {{match.GS_by_1}} - {{match.GS_by_2}}</h3>
+					              <!-- <h3> VS</h3> -->
+					           </div>
+					           <div class ="col">   
+					          		<img src="{{ match.player2.logo.url }}" class =" responsive-img float left" width=90 height=70>
+					          </div>
+					      </div>    
+					      
+					          
+				          
 				        <div class="card-action">
-				          <a href="/edit" class="btn btn-primary">Edit Match</a>
+				          <a href="/edit" class="btn bg-light ">Edit Match</a>
 				          
 				        </div>
 				      </div>

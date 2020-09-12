@@ -9,7 +9,8 @@ urlpatterns = [
     path('edit/', views.edit_match , name ='edit_match'),
     path('matches/', views.matches , name ='matches'),
     path('player/<int:id>',views.player,name='player'),
-    path('clubs/',views.clubs ,name ='clubs')
+    path('clubs/',views.clubs ,name ='clubs'),
+    # path('ml/',views.ml,name='ml'),
    
 
     ]

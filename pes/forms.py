@@ -4,9 +4,7 @@ from .models import Match,Player
 
 
 players_obj = Player.objects.all();
-players =[]
-for player in players_obj:
-	players.append(player.name)
+
 
 
 class MatchForm(forms.Form):

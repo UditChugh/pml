@@ -258,10 +258,10 @@ def dataset(request):
 			data =  data_for_predict(player1 , id_p1 ,player2,id_p2)
 
 			# scaled_data = scaler.fit_transform(data)
-			rf = pickle.load(open('rf_model.sav','rb'))
-			lr = pickle.load(open('lr_model.sav','rb'))
-			rf_1 = pickle.load(open('rf_model_1.sav','rb'))
-			scaler = pickle.load(open('scaler1.sav','rb'))
+			rf = pickle.load(open('media/models/rf_model.sav','rb'))
+			lr = pickle.load(open('media/models/lr_model.sav','rb'))
+			rf_1 = pickle.load(open('media/models/rf_model_1.sav','rb'))
+			scaler = pickle.load(open('media/models/scaler1.sav','rb'))
 			print(data.shape ," this is the shape of data ")
 
 			data = scaler.transform(data)

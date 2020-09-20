@@ -53,8 +53,8 @@
         <tbody>
         {% for player in players %} 
           <tr>
-            <td><img src="{{ player.logo.url }}" class =" responsive-img" width=50 height=40></td>
-            <td><a href="/player/{{ player.id }} " >{{ player.name }}</a></td>
+            <td><a href="/player/{{ player.id }}"><img src="{{ player.logo.url }}" class =" responsive-img hoverable" width=50 height=40></a></td>
+            <td><a href="/player/{{ player.id }} " class ="black-text hoverable" >{{ player.name }}</a></td>
             <td>{{ player.total_match }}</td>
             <td>{{ player.total_wins }}</td>
             <td>{{ player.total_loss }}</td>

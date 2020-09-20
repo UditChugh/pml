@@ -19,7 +19,7 @@ from django.db.models import Count
 class Player(models.Model):
 	name = models.CharField(max_length = 30)
 	logo =models.ImageField(upload_to='pictures' ,null =True , blank =True ,default ='default.jpg' )
-	abbr = models.CharField(max_length = 4 ,default ="FCB" )
+	abbr = models.CharField(max_length = 7 ,default ="FCB" )
 	manager = models.CharField(max_length = 30 ,default = 'unknown')
 
 

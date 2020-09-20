@@ -10,7 +10,7 @@ urlpatterns = [
     path('matches/', views.matches , name ='matches'),
     path('player/<int:id>',views.player,name='player'),
     path('clubs/',views.clubs ,name ='clubs'),
-    # path('ml/',views.ml,name='ml'),
+    path('match_predictor/',views.dataset,name='dataset'),
    
 
     ]
